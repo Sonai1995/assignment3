@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>JS Class & Object</title>
+</head>
+<body>
+
+
+<script>
+class RestaurantManager {
+	
+    // 1 default method
+    constructor() {
+    	console.log("I am the default here!");
+    }
+    
+    // 2 static Data
+    restaurantList = [
+		{
+		name : "Res Name 1",
+		address : "Shibtali",
+		city : "Balurghat",
+		},
+		{
+		name : "Res Name 2",
+		address : "kunore",
+		city : "kaliyagange",
+		},
+		{
+		name : "Res Name 3",
+		address : "dumdum",
+		city : "kolkata",
+		},
+		{
+		name : "Res Name 4",
+		address : "nimta",
+		city : "kolkata",
+		}
+    ];
+
+    // 3 print all names    	   
+    printAllRestaurantNames() {
+
+		var names = "";
+		for(var i=0;i<this.restaurantList.length;i++)
+		{
+			console.log(this.restaurantList[i].name);
+			console.log('\n');	
+		}
+		
+	
+    }
+
+    // 4 search by City
+    filterRestaurantByCity(filter_value) {
+	
+		var names = "";
+		for(var i=0;i<this.restaurantList.length;i++)
+		{
+			if(this.restaurantList[i].city == filter_value)
+			{
+				console.log(this.restaurantList[i].name);
+				console.log('\n');	
+			}
+		}			
+    }
+
+    // 5 add new restaurant data
+    addRestaurantData(name,address,city) {
+	
+		var element = {};
+		element.name = name;
+			element.address = address;
+		element.city = city;
+
+		this.restaurantList.push(element);	
+    }
+
+}
+
+
+var object = new RestaurantManager();
+
+//console.log(object);                            // 1
+//console.log(object.restaurantList);             // 2
+//object.printAllRestaurantNames();               // 3
+//object.filterRestaurantByCity("kolkata");       // 4
+//object.addRestaurantData("a1","a2","a3");       // 5
+
+</script>
+
+</body>
+</html>
